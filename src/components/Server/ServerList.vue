@@ -15,5 +15,8 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+  div {
+    border: 1px solid blue;
+  }
 </style>
