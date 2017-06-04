@@ -1,22 +1,29 @@
 <template>
   <div class="col-xs-12 col-sm-6">
       <ul class="list-group">
-        <li
-          class="list-group-item"
-          v-for="index in 5">
-          Server #{{ index }}
-        </li>
+        <server-instance v-for="server in servers" :server="server"></server-instance>
       </ul>
   </div>
 </template>
 
 <script>
+import Server from './Server.vue';
 export default {
+  components: {
+    'server-instance': Server
+  },
+  data() {
+    return {
+      servers: [
+        {id: 1, status: 'Normal'},
+        {id: 2, status: 'Critical'},
+        {id: 3, status: 'Unknown'},
+        {id: 4, status: 'Normal'}
+      ]
+    }
+  }
 }
 </script>
 
-<style lang="css" scoped>
-  div {
-    border: 1px solid blue;
-  }
+<style lang="css">
 </style>
